@@ -1,0 +1,19 @@
+<div>
+  <%= form_tag '/accounts' do %>
+    <div>Company Name: <%= text_field_tag 'account[company_name]', @account.name, placeholder: 'Enter your company name' %></div>
+    <div>Username: <%= text_field_tag 'account[username]', nil, placeholder: 'Username' %></div>
+    <div>Password: <%= password_field_tag 'account[password]', nil, placeholder: 'Password' %></div>
+    <div>Confirm Password: <%= password_field_tag 'account[password_confirmation]', nil, placeholder: 'Confirm Password' %></div>
+    <hr />
+    Address: <br />
+    Address 1: <%= text_field_tag 'account[street_address_1]', @account.addresses[0].street_address_1 %><br />
+    Address 2: <%= text_field_tag 'account[street_address_2]', @account.addresses[0].street_address_2 %><br />
+    City: <%= text_field_tag 'account[city]', @account.addresses[0].city %><br />
+    State: <%= text_field_tag 'account[state]', @account.addresses[0].state %><br />
+    Zip Code: <%= text_field_tag 'account[postal_code]', @account.addresses[0].postal_code %></br />
+    <hr />
+    <%= hidden_field_tag 'account[account_id]', @account.account_id %>
+    <%= submit_tag "Create Account" %>
+  <% end %>
+</div>
+
