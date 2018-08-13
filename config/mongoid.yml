@@ -4,7 +4,6 @@ development:
       database: dockerzon_development
       hosts:
         - mongodb:27017
-        - <%= ENV['MONGO_HOST_URL'] %>
       options:
   options:
 

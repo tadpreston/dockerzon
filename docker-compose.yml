@@ -4,26 +4,20 @@ services:
   mongodb:
     image: 'mongo:4.0'
     volumes:
-      - 'mongodb:/etc/mongo'
+      - db-data:/data/db
     networks:
       - app_net
 
-  website:
+  rails:
     depends_on:
-      - 'mongodb'
+      - mongodb
     build: .
     ports:
       - 3000:3000
-    volumes:
-      - '.:/app'
-    env_file:
-      - '.env'
     networks:
       - app_net
 
 volumes:
-  mongodb:
-
+  db-data:
 networks:
   app_net:
-    driver: bridge
