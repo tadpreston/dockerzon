@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class AccountForm
-  ATTRIBUTES = [:company_name, :username, :password, :street_address_1, :street_address_2, :city, :state, :postal_codei, :acct_id]
+  ATTRIBUTES = [:company_name, :username, :password, :street_address_1, :street_address_2, :city, :state, :postal_code, :acct_id]
   attr_accessor *ATTRIBUTES
 
   def self.all_accounts
