@@ -14,5 +14,6 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install --binstubs --without development test
 
 COPY . .
+RUN bundle exec rake assets:precompile
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma/production.rb"]
